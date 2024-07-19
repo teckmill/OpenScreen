@@ -46,23 +46,3 @@
   <p>If you encounter any issues with OpenScreen, check the server console for error messages.</p>
   <p>If you need help with customization or troubleshooting, feel free to reach out to us on the FiveM forums or GitHub issues.</p>
   <p>Note: This is my first release, and I'm aware that it may not be perfect. If you encounter any issues or have feedback, please don't hesitate to reach out. I'm committed to supporting OpenScreen and fixing any problems that arise. Your input will help me improve the resource and make it even better for everyone.</p>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      color: #333;
-      margin-bottom: 10px;
-    }
-    ul {
-      list-style: disc;
-      margin-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-  </style>
-</body>
-</html>
