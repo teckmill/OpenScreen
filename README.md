@@ -25,7 +25,7 @@ Save the changes to the config.lua file.
 Customization
 
 To customize the loading screen layout, edit the html/index.html file.
-To add custom images or videos, add them to the html/assets folder.
+*To add custom images or videos, add them to the html/assets folder Or the stream folder check the readme file in the stream folder. - Dont quote me on this and i can help if you have any issues
 To add custom audio files, add them to the html/audio folder.
 Troubleshooting
 
