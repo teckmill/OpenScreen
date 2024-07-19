@@ -1,26 +1,3 @@
--- __resource.lua
-resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
-
-resource_type 'gamemode' {
-  name = 'yloading screen'
-  version = '1.0'
-  description = 'Custom loading screen with animations and interactive elements'
-}
-
-resource_type 'client_scripts' {
-  'client.lua'
-}
-
-resource_type 'tream' {
-  'tream/background.png',
-  'tream/logo.png',
-  'tream/progress_bar.png',
-  'tream/progress_bar_fill.png',
-  'tream/loader.gif',
-  'tream/Orbitron-Bold.ttf',
-  'tream/soundtrack.mp3' -- add a soundtrack
-}
-
 -- client.lua
 local loadingScreen = {}
 local soundtrack = nil
