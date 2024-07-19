@@ -1,0 +1,11 @@
+add the following asset files:
+
+'stream/background.png',
+  'stream/logo.png',
+  'stream/progress_bar.png',
+  'stream/progress_bar_fill.png',
+  'stream/loader.gif',
+  'stream/Orbitron-Bold.ttf',
+  'stream/soundtrack.mp3', -- add a soundtrack
+  'stream/background_day.png', -- dynamic background
+  'stream/background_night.png', -- dynamic background
