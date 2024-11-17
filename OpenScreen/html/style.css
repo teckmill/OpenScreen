@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    background: linear-gradient(125deg, #000000, #1a1a1a);
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 51, 102, 0.1) 25%,
+        transparent 25%,
+        transparent 75%,
+        rgba(255, 51, 102, 0.1) 75%,
+        rgba(255, 51, 102, 0.1)
+    );
+    background-size: 60px 60px;
+    animation: backgroundMove 20s linear infinite;
+    opacity: 0.3;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, 
+        rgba(255, 51, 102, 0.1) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.8) 100%
+    );
+    pointer-events: none;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(125deg, 
+        rgba(255, 51, 102, 0.1),
+        rgba(255, 107, 107, 0.1)
+    );
+    z-index: 1;
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0px) rotate(360deg); }
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 51, 102, 0.5);
+    border-radius: 50%;
+}
+
+@for $i from 1 through 20 {
+    .particle:nth-child(#{$i}) {
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        animation: float #{random(20) + 10}s ease-in-out infinite;
+        animation-delay: -#{random(10)}s;
+    }
+}
+
+@keyframes backgroundMove {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 51, 102, 0.1);
+    box-shadow: 0 0 30px rgba(255, 51, 102, 0.1);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.server-name {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: glow 2s ease-in-out infinite alternate;
+    background: linear-gradient(45deg, #ff3366, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.server-slogan {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.loading-container {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff3366, #ff6b6b);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+    animation: progressAnimation 3s ease infinite;
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.loading-tip {
+    text-align: center;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.server-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.info-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2rem;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    flex: 1;
+    max-width: 400px;
+    border: 1px solid rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.1);
+}
+
+.info-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.music-controls {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.music-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.music-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.music-icon {
+    font-size: 1.2rem;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 51, 102, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 51, 102, 0.8),
+                     0 0 30px rgba(255, 107, 107, 0.6);
+    }
+}
+
+@keyframes progressAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .server-name {
+        font-size: 3rem;
+    }
+    
+    .server-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .info-box {
+        width: 100%;
+    }
+}
